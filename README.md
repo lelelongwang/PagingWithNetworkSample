@@ -1,0 +1,2 @@
+# PagingWithNetworkSample
+Jetpack练习的超简单demo，通过paging2获取网络数据直接显示在界面上。
