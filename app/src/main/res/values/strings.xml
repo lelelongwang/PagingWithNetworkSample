@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">PagingWithNetworkSample</string>
+    <string name="item_author">分享人：%s</string>
+    <string name="item_chapterName">分类：%1$s/%2$s</string>
+    <string name="item_niceDate">时间：%s</string>
+</resources>

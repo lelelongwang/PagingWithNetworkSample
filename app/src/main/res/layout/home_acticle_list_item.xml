@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright 2020 Google LLC
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     https://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener"/>
+        <variable
+            name="acticle"
+            type="com.longjunhao.pagingwithnetworksample.data.HomeActicleItem"/>
+    </data>
+
+    <com.longjunhao.pagingwithnetworksample.views.MaskedCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/card_side_margin"
+        android:layout_marginEnd="@dimen/card_side_margin"
+        android:layout_marginBottom="@dimen/card_bottom_margin"
+        android:onClick="@{clickListener}"
+        app:cardElevation="@dimen/card_elevation"
+        app:cardPreventCornerOverlap="false"
+        app:shapeAppearanceOverlay="@style/ShapeAppearance.Sunflower.Card">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="4dp">
+
+                <TextView
+                    android:id="@+id/acticle_title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:scaleType="centerCrop"
+                    android:text="@{acticle.title}"
+                    android:textAppearance="?attr/textAppearanceListItem"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/acticle_author"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_normal"
+                    android:layout_marginTop="@dimen/margin_normal"
+                    android:text="@{@string/item_author(acticle.author)}"
+                    android:textAppearance="?attr/textAppearanceListItemSecondary"
+                    android:textColor="@android:color/secondary_text_dark"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/acticle_title"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    tools:text="Sunny F."/>
+
+                <TextView
+                    android:id="@+id/acticle_chapterName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_normal"
+                    android:layout_marginTop="@dimen/margin_normal"
+                    android:layout_marginStart="@dimen/margin_normal"
+                    android:text="@{@string/item_chapterName(acticle.chapterName,acticle.superChapterName)}"
+                    android:textAppearance="?attr/textAppearanceListItemSecondary"
+                    android:textColor="@android:color/secondary_text_dark"
+                    android:gravity="center_horizontal"
+                    app:layout_constraintStart_toEndOf="@id/acticle_author"
+                    app:layout_constraintTop_toBottomOf="@id/acticle_title"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    tools:text=""/>
+
+                <TextView
+                    android:id="@+id/acticle_niceDate"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_normal"
+                    android:layout_marginTop="@dimen/margin_normal"
+                    android:text="@{@string/item_niceDate(acticle.niceDate)}"
+                    android:textAppearance="?attr/textAppearanceListItemSecondary"
+                    android:textColor="@android:color/secondary_text_dark"
+                    android:gravity="center_horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/acticle_title"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    tools:text=""/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.longjunhao.pagingwithnetworksample.views.MaskedCardView>
+
+</layout>
